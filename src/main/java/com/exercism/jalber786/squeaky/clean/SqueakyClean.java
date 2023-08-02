@@ -27,14 +27,4 @@ class SqueakyClean {
     private static boolean shouldIgnoreChar(char c) {
         return !Character.isLetter(c) || ((Character.toString(c)).matches("[α-ω]"));
     }
-
-    private static boolean isntLetter(char c) {
-
-        boolean value = false;
-        if ((Character.toString(c)).matches("[^\\p{L}\\p{P}\\p{Z}]")) {
-            value = true;
-        }
-
-        return value;
-    }
 }
