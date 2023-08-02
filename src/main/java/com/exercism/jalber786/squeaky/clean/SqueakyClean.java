@@ -12,11 +12,11 @@ class SqueakyClean {
                 stringBuilder.append("CTRL");
             } else if ((currChar == '-')) {
                 char nextChar = identifier.charAt(i + 1);
-                if (!shouldIgnoreChar(nextChar)) {
+                if (shouldNotIgnoreChar(nextChar)) {
                     stringBuilder.append(Character.toUpperCase(nextChar));
                     i++;
                 }
-            } else if (!shouldIgnoreChar(currChar)) {
+            } else if (shouldNotIgnoreChar(currChar)) {
                 stringBuilder.append(currChar);
             }
         }
@@ -24,7 +24,7 @@ class SqueakyClean {
         return stringBuilder.toString();
     }
 
-    private static boolean shouldIgnoreChar(char c) {
-        return !Character.isLetter(c) || ((Character.toString(c)).matches("[α-ω]"));
+    private static boolean shouldNotIgnoreChar(char c) {
+        return Character.isLetter(c) && (!(Character.toString(c)).matches("[α-ω]"));
     }
 }
