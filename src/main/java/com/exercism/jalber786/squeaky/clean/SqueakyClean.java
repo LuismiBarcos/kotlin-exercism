@@ -13,7 +13,7 @@ class SqueakyClean {
             } else if ((currChar == '-')) {
                 char nextChar = identifier.charAt(i + 1);
                 if (!shouldIgnoreChar(nextChar)) {
-                    stringBuilder.append(Character.toUpperCase(identifier.charAt(i + 1)));
+                    stringBuilder.append(Character.toUpperCase(nextChar));
                     i++;
                 }
             } else if (!shouldIgnoreChar(currChar)) {
